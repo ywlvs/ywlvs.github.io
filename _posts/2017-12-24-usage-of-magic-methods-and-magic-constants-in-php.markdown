@@ -232,7 +232,7 @@ var_dump(is_callable($obj));
 ?>
 ```
 
-** `__set_state()` **
+**`__set_state()`**
 
 >调用 `var_export()` 导出类时，此静态方法会被调用。
 
