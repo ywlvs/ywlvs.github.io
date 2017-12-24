@@ -15,7 +15,7 @@ tags:
 
 #### 魔术方法（Magic methods）
 
->PHP 中把以两个下划线 __ 开头的方法称为魔术方法。
+>PHP 中把以两个下划线 __ 开头的方法称为魔术方法，这些方法不需要显式的调用，而是由某种特定的条件出发。
 
 + `__construct()`，类的构造函数
 + `__destruct()`，类的析构函数
@@ -37,6 +37,7 @@ tags:
 > 构造函数和析构函数的调用分别发生在类生命周期的开始和结束，在对象创建时调用构造函数，在对象消亡时调用析构函数。比如我们需要打开一个文件，在对象创建时打开一个文件，对象消亡时关闭该文件。
 
 ```php
+
 <?php
 
 class FileRead
@@ -55,11 +56,13 @@ class FileRead
 }
 
 ?>
+
 ```
 
 这两个方法在继承时可以扩展，例如：
 
 ```php
+
 <?php
 
 class TmpFileRead extends FileRead
@@ -76,6 +79,7 @@ class TmpFileRead extends FileRead
 }
 
 ?>
+
 ```
 
 **`__call()` 和 `__callStatic()`**
@@ -113,6 +117,7 @@ MethodTest::runTest('in object context');
 >操作一个类的属性时调用该函数
 
 ```php
+
 <?php
 
 class MethodTest
@@ -145,6 +150,7 @@ class MethodTest
 }
 
 ?>
+
 ```
 
 **`__sleep()` 和 `__wakeup()`**
@@ -152,6 +158,7 @@ class MethodTest
 >当执行 `serialize()` 和 `unserialize()` 时， 会先调用 `__sleep()` 和 `__wakeup()` 函数。
 
 ```php
+
 <?php
 
 class Connection
@@ -187,7 +194,8 @@ class Connection
     }
 }
 
-<?
+?>
+
 ```
 
 **`__toString()`**
@@ -195,6 +203,7 @@ class Connection
 > 当对象需要被当做字符串使用时的回应方法。 例如使用 `echo $obj;` 来输出一个对象。这个方法只能返回字符串，并且不可以在这个方法中抛出异常，否则会出现致命错误。
 
 ```php
+
 <?php
 
 class SimpleClass
@@ -209,6 +218,7 @@ $obj = new SimpleCalss;
 echo $obj;
 
 ?>
+
 ```
 
 **`__invoke()` 方法**
@@ -216,6 +226,7 @@ echo $obj;
 >调用函数的方式调用一个对象时的回应方法。
 
 ```php
+
 <?php
 
 class CallableClass
@@ -230,6 +241,7 @@ $obj = new CallableClass;
 var_dump(is_callable($obj));
 
 ?>
+
 ```
 
 **`__set_state()`**
@@ -270,6 +282,7 @@ var_dump(var_export($a));
 >当对象完成复制时调用此函数。
 
 ```php
+
 <?php
 
 class Singleton
@@ -297,6 +310,7 @@ class Singleton
 }
 
 ?>
+
 ```
 
 #### 魔术常量（Magic constants）
