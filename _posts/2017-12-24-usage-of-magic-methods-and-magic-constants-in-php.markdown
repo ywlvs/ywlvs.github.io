@@ -53,4 +53,55 @@ class FileRead
         fclode($this->handle);
     }
 }
+
+?>
 ```
+
+这两个方法在继承时可以扩展，例如：
+
+```php
+<?php
+
+class TmpFileRead extends FileRead
+{
+    function __construct()
+    {
+        parent::__construct();
+    }
+
+    function __destruct()
+    {
+        parent::__destruct();
+    }
+}
+
+?>
+```
+
+**`__call()` 和 `__callStatic()`**
+
+> 在对象中调用一个不可访问的方法时，会调用这两个方法，其中后者为静态方法。不可访问的含义，包括用 protected 和 private 关键字声明的函数，也包括未定义的函数。
+
+```php
+
+<?php
+
+class MethodTest
+{
+    public function __call($name, $args)
+    {
+        echo 'Calling object method' . $name . implode(',', $args) . "\n";
+    }
+
+    public static function __callStatic($name, $args)
+    {
+        echo 'Calling static method' . $name . implode(',', $args) . "\n";
+    }
+}
+
+$obj    = new MethodTest;
+$obj->runTest('in object context');
+
+MethodTest::runTest('in object context');
+
+?>
