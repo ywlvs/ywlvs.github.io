@@ -31,3 +31,27 @@ PHP 中把以两个下划线 __ 开头的方法称为魔术方法。
 + __invoke()，调用函数的方式调用一个对象时的回应方法
 + __set_state()，调用 var_export() 导出类时，此静态方法会被调用
 + __clone()，当对象复制完成时调用
+
+<br>
+
+**`__construct()` 和 `__destruct()`**
+
+> 构造函数和析构函数的调用分别发生在类生命周期的开始和结束，在对象创建时调用构造函数，在对象消亡时调用析构函数。比如我们需要打开一个文件，在对象创建时打开一个文件，对象消亡时关闭该文件。
+
+```php
+<?php
+class FileRead
+{
+    protected $handle = null;
+
+    function __construct()
+    {
+        $this->handle = fopen('file-you-want-to-open');
+    }
+
+    function __destruct()
+    {
+        fclode($this->handle);
+    }
+}
+```
