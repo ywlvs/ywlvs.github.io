@@ -9,7 +9,7 @@ catalog: true
 tags:
     - PHP
 ---
-### 学习 PHP ，有些基础知识是必须要补一补的，今天记录一下 php 中魔术方法和魔术常量的一些知识，原文来自[严肃的博客](http://yansu.org/2014/04/27/magic-methods-and-magic-constants-in-php.html)。
+### 学习 PHP，有些基础知识是必须要补一补的，今天记录一下 php 中魔术方法和魔术常量的一些知识，原文来自 [严肃的博客](http://yansu.org/2014/04/27/magic-methods-and-magic-constants-in-php.html)。
 
 ---
 
@@ -23,13 +23,13 @@ tags:
 + `__callStatic()`，用静态方式调用类中一个不可访问方法时调用
 + `__get()`，获取类中某属性时调用该函数
 + `__set()`，设置类中的属性时调用该函数
-+ `__isset()`，当对不可访问属性调用 isset() 或 empty() 时调用
-+ `__unset()`，当对不可访问属性调用 unset() 时调用
-+ `__sleep()`，执行 serialize() 时，会先调用这个函数
-+ `__wakeup()`，执行 unserialize() 时，会先调用这个函数
++ `__isset()`，当对不可访问属性调用 `isset()` 或 `empty()` 时调用
++ `__unset()`，当对不可访问属性调用 `unset()` 时调用
++ `__sleep()`，执行 `serialize()` 时，会先调用这个函数
++ `__wakeup()`，执行 `unserialize()` 时，会先调用这个函数
 + `__toString()`，类被当成字符串处理时的回应方法
 + `__invoke()`，调用函数的方式调用一个对象时的回应方法
-+ `__set_state()`，调用 var_export() 导出类时，此静态方法会被调用
++ `__set_state()`，调用 `var_export()` 导出类时，此静态方法会被调用
 + `__clone()`，当对象复制完成时调用
 
 **`__construct()` 和 `__destruct()`**
@@ -112,7 +112,7 @@ MethodTest::runTest('in object context');
 
 ```
 
-**`__get()` ， `__set()` ， `__isset()` 和 `__unset()`**
+**`__get()` , `__set()` , `__isset()` 和 `__unset()`**
 
 >操作一个类的属性时调用该函数
 
