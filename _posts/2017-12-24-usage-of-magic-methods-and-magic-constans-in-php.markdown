@@ -1,3 +1,14 @@
+---
+layout:     post
+title:      "仅仅是做一个尝试"
+subtitle:   "Stay hungary, Stay foolish"
+date:       2017-12-23 16:00:00
+author:     "ywlvs"
+header-img: "img/post-bg-php-magic-methods.jpg"
+catalog: true
+tags:
+    - php
+---
 ### 学习 php ，有些基础知识是必须要补一补的，今天记录一下 php 中魔术方法和魔术常量的一些知识，原文来自[严肃的博客](http://yansu.org/2014/04/27/magic-methods-and-magic-constants-in-php.html)。
 
 ---
