@@ -1,4 +1,3 @@
-
 ---
 layout:     post
 title:      "MySql 中常见的数据类型"
