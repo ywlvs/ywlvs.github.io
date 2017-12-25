@@ -9,6 +9,7 @@ catalog: true
 tags:
     - PHP
 ---
+
 ### 学习 PHP，有些基础知识是必须要补一补的，今天记录一下 php 中魔术方法和魔术常量的一些知识，原文来自 [严肃的博客](http://yansu.org/2014/04/27/magic-methods-and-magic-constants-in-php.html)。
 
 ---
