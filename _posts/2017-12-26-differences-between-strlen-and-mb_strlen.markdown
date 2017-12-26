@@ -23,15 +23,19 @@ tags:
 <?php
 
 $str = 'abc';
+
 echo strlen($str);  // 3
 
 $str = 'ab c';
+
 echo strlen($str);  // 4，中间有一个空格
 
 $str = '学习';
+
 echo strlen($str);  // 6，UTF-8 编码，每个字符是 3 个长度
 
 $str = '学习PHP';
+
 echo strlen($str);  // 9, 3 * 2 + 3
 
 ?>
@@ -55,8 +59,11 @@ mixed mb_strlen ( string $str [, string $encoding = mb_internal_encoding() ] )
 $str = '学习PHP';
 
 echo mb_strlen($str);               // 5
+
 echo mb_strlen($str, 'UTF-8');      // 5
+
 echo mb_strlen($str, 'GBK');        // 6
+
 echo mb_strlen($str, 'gb2312');     // 6
 
 ?>
