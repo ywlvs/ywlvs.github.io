@@ -4,7 +4,7 @@ title:      "PHP 中 strlen 和 mb_strlen 函数的区别"
 subtitle:   "Differences between strlen and mb_strlen"
 date:       2017-12-26 20:00:00
 author:     "ywlvs"
-header-img: "img/post-bg-learn-php.png"
+header-img: "img/post-bg-learn-php.jpg"
 catalog: true
 tags:
     - MySql
@@ -54,10 +54,10 @@ mixed mb_strlen ( string $str [, string $encoding = mb_internal_encoding() ] )
 
 $str = '学习PHP';
 
-echo mb_strlen($str);               \\ 5
-echo mb_strlen($str, 'UTF-8');      \\ 5
-echo mb_strlen($str, 'GBK');        \\ 6
-echo mb_strlen($str, 'gb2312');     \\ 6
+echo mb_strlen($str);               // 5
+echo mb_strlen($str, 'UTF-8');      // 5
+echo mb_strlen($str, 'GBK');        // 6
+echo mb_strlen($str, 'gb2312');     // 6
 
 ?>
 
