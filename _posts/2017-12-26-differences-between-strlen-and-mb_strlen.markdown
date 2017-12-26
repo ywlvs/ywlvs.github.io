@@ -4,10 +4,10 @@ title:      "PHP 中 strlen 和 mb_strlen 函数的区别"
 subtitle:   "Differences between strlen and mb_strlen"
 date:       2017-12-26 20:00:00
 author:     "ywlvs"
-header-img: "img/post-bg-learn-php.jpg"
+header-img: "img/post-bg-character-separator.png"
 catalog: true
 tags:
-    - MySql
+    - PHP
 ---
 
 > #### `PHP` 中，`strlen` 和 `mb_strlen` 函数都可以用来计算字符串的长度，但是两个函数是有区别的。
@@ -50,7 +50,7 @@ echo strlen($str);  // 9, 3 * 2 + 3
 mixed mb_strlen ( string $str [, string $encoding = mb_internal_encoding() ] )
 ```
 
-    由该函数的定义可以看出，除了要检查的字符串以外，还可以传递第二个参数用以指定字符编码。如果省略第二个函数，则会使用 `PHP` 的内部编码，内部编码可以通过 `mb_internal_encoding()` 函数获得。
+由该函数的定义可以看出，除了要检查的字符串以外，还可以传递第二个参数用以指定字符编码。如果省略第二个函数，则会使用 `PHP` 的内部编码，内部编码可以通过 `mb_internal_encoding()` 函数获得。
 
 
 ```php
