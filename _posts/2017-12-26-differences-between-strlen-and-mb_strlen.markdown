@@ -4,7 +4,7 @@ title:      "PHP 中 strlen 和 mb_strlen 函数的区别"
 subtitle:   "Differences between strlen and mb_strlen"
 date:       2017-12-26 20:00:00
 author:     "ywlvs"
-header-img: "img/post-bg-character-separator.png"
+header-img: "img/post-bg-lars-sowig-final-silver.jpg"
 catalog: true
 tags:
     - PHP
