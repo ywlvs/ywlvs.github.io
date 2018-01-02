@@ -30,9 +30,12 @@ Linux PC 4.4.0-97-generic #120-Ubuntu SMP Tue Sep 19 17:28:18 UTC 2017 x86_64 x8
 
 ### Linux 系统版本的命令
 
+
 + **`lsb_release -a`**
 
+
 > 该命令适用于所有的　`Linux` 发行版，包括　`Redhat`, `OpenSuSe` 等发行版本。有的系统中默认并没有安装　`lsb_release`，需要安装。
+
 
 ```
 $ lsb_release -a
@@ -51,6 +54,7 @@ Codename:   xenial
 $ cat /etc/issue
 Ubuntu 16.04.3 LTS \n \l
 ```
+
 
 + **`cat /etc/redhat-release`**
 
