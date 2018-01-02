@@ -16,14 +16,14 @@ tags:
 
 > 以下两条命令适用于所有的　`Linux` 发行版本。
 
-+ **`cat /proc/version`**
+**`cat /proc/version`**
 
 ```
 $ cat /proc/version
 Linux version 4.4.0-97-generic (buildd@lcy01-33) (gcc version 5.4.0 20160609 (Ubuntu 5.4.0-6ubuntu1~16.04.4) ) #120-Ubuntu SMP Tue Sep 19 17:28:18 UTC 2017
 ```
 
-+ **`uname -a`**
+**`uname -a`**
 
 ```
 $ uname -a
@@ -32,7 +32,7 @@ Linux PC 4.4.0-97-generic #120-Ubuntu SMP Tue Sep 19 17:28:18 UTC 2017 x86_64 x8
 
 #### Linux 系统版本的命令
 
-+ **`lsb_release -a`**
+**`lsb_release -a`**
 
 > 该命令适用于所有的　`Linux` 发行版，包括　`Redhat`, `OpenSuSe` 等发行版本。有的系统中默认并没有安装　`lsb_release`，需要安装。
 
@@ -45,7 +45,7 @@ Release:    16.04
 Codename:   xenial
 ```
 
-+ **`cat /etc/issue`**
+**`cat /etc/issue`**
 
 > 此命令适合所有的　`Linux`　发行版。
 
@@ -54,7 +54,7 @@ $ cat /etc/issue
 Ubuntu 16.04.3 LTS \n \l
 ```
 
-+ **`cat /etc/redhat-release`**
+**`cat /etc/redhat-release`**
 
 > 此命令只适合查看　`Red Hat` 系的发行版本，如：`CentOS`。
 
