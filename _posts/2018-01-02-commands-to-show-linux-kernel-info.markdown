@@ -14,7 +14,7 @@ tags:
 
 #### Linux 内核版本命令
 
-> 以下两条命令适用于所有的　`Linux` 发行版本。
+> 以下两条命令适用于所有的 `Linux` 发行版本。
 
 **`cat /proc/version`**
 
@@ -34,7 +34,7 @@ Linux PC 4.4.0-97-generic #120-Ubuntu SMP Tue Sep 19 17:28:18 UTC 2017 x86_64 x8
 
 **`lsb_release -a`**
 
-> 该命令适用于所有的　`Linux` 发行版，包括　`Redhat`, `OpenSuSe` 等发行版本。有的系统中默认并没有安装　`lsb_release`，需要安装。
+> 该命令适用于所有的 `Linux` 发行版，包括 `Redhat`, `OpenSuSe` 等发行版本。有的系统中默认并没有安装 `lsb_release`，需要安装。
 
 ```
 $ lsb_release -a
@@ -47,7 +47,7 @@ Codename:   xenial
 
 **`cat /etc/issue`**
 
-> 此命令适合所有的　`Linux`　发行版。
+> 此命令适合所有的 `Linux` 发行版。
 
 ```
 $ cat /etc/issue
@@ -56,7 +56,7 @@ Ubuntu 16.04.3 LTS \n \l
 
 **`cat /etc/redhat-release`**
 
-> 此命令只适合查看　`Red Hat` 系的发行版本，如：`CentOS`。
+> 此命令只适合查看 `Red Hat` 系的发行版本，如：`CentOS`。
 
 ```
 $ cat /etc/redhat-release
