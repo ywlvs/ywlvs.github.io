@@ -14,6 +14,8 @@ tags:
 
 #### Linux 内核版本命令
 
+> 以下两条命令适用于所有的　`Linux` 发行版本。
+
 + **`cat /proc/version`**
 
 ```
