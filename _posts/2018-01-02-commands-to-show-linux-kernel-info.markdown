@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      "查看 Linux 内核信息的常用命令"
-subtitle:   "Commands to Show Kernel Info"
+subtitle:   "Commands to Show Kernel Info of Linux"
 date:       2018-01-02 22:00:00
 author:     "ywlvs"
 header-img: "img/post-bg-assistant-for-linux-and-mac.jpg"
