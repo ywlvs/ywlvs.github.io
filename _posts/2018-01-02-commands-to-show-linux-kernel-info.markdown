@@ -12,7 +12,7 @@ tags:
 
 > #### 在使用 `Linux` 的过程中，经常需要查看当前版本的内核信息，今天记录一些常用的相关命令。
 
-### Linux 内核版本命令
+#### Linux 内核版本命令
 
 + **`cat /proc/version`**
 
@@ -28,14 +28,11 @@ $ uname -a
 Linux PC 4.4.0-97-generic #120-Ubuntu SMP Tue Sep 19 17:28:18 UTC 2017 x86_64 x86_64 x86_64 GNU/Linux
 ```
 
-### Linux 系统版本的命令
-
+#### Linux 系统版本的命令
 
 + **`lsb_release -a`**
 
-
 > 该命令适用于所有的　`Linux` 发行版，包括　`Redhat`, `OpenSuSe` 等发行版本。有的系统中默认并没有安装　`lsb_release`，需要安装。
-
 
 ```
 $ lsb_release -a
@@ -54,7 +51,6 @@ Codename:   xenial
 $ cat /etc/issue
 Ubuntu 16.04.3 LTS \n \l
 ```
-
 
 + **`cat /etc/redhat-release`**
 
