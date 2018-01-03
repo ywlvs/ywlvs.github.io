@@ -82,9 +82,9 @@ Immediately-Invoked Function Expression，立即执行函数，即函数定义�
 
 ### **`NPM` 与 `NVM`**
 
-+ NPM 是 node 的包管理工具，类似于php的composer；
++ NPM 是 Node 的包管理工具，类似于 PHP 的 Composer；
 
-+ NVM 是 node 的版本管理工具。
++ NVM 是 Node 的版本管理工具。
 
 ### **`XSS`**
 
