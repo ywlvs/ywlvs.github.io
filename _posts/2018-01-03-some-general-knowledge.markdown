@@ -68,8 +68,9 @@ Alternative PHP Cache，可选php缓存，是 PHP 的一个扩展。
 
 ### **`IDC`**
 
-Internet Data Center：互联网数据中心；
-International Data Corporation：国际数据公司。
++ Internet Data Center：互联网数据中心；
+
++ International Data Corporation：国际数据公司。
 
 ### **`IIFE`**
 
@@ -81,8 +82,9 @@ Immediately-Invoked Function Expression，立即执行函数，即函数定义�
 
 ### **`NPM` 与 `NVM`**
 
-NPM 是 node 的包管理工具，类似于php的composer；
-NVM 是 node 的版本管理工具。
++ NPM 是 node 的包管理工具，类似于php的composer；
+
++ NVM 是 node 的版本管理工具。
 
 ### **`XSS`**
 
@@ -90,4 +92,4 @@ Cross-Site Scripting，是一种网站应用程序的安全漏洞攻击，是代
 
 ### **`CSRF`**
 
-Cross-Site Request Forgery，也被称为 one-click attack 或者 session riding，通常缩写为 csrf 或者 xsrf，是一种挟制用户在当前已登录的 Web 应用程序上执行非本意的操作的攻击方法。
+Cross-Site Request Forgery，也被称为 one-click attack 或者 session riding，通常缩写为 CSRF 或者 XSRF，是一种挟制用户在当前已登录的 Web 应用程序上执行非本意的操作的攻击方法。
