@@ -45,6 +45,15 @@ Release:    16.04
 Codename:   xenial
 ```
 
+**`lsb_release -cs`**
+
+> 该命令会显示当前发型版本的名字，比如 `Ubuntu 16.04` 的名字是 `xenial`
+
+```
+$ lsb_release -cs
+xenial
+```
+
 **`cat /etc/issue`**
 
 > 此命令适合所有的 `Linux` 发行版。
