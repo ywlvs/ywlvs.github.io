@@ -52,13 +52,13 @@ $ sudo apt-get remove docker docker-engine docker.io
 
 ##### SET UP THE REPOSITORY
 
-1. 更新 `apt` 的 `package` 索引：
+1.更新 `apt` 的 `package` 索引：
 
 ```
 $ sudo apt-get update
 ```
 
-2. 安装一些必要的包，从而可以使用 `apt` 命令通过 `HTTPS` 访问仓库。
+2.安装一些必要的包，从而可以使用 `apt` 命令通过 `HTTPS` 访问仓库。
 
 ```
 $ sudo apt-get install \
