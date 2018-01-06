@@ -107,7 +107,7 @@ $ sudo add-apt-repository \
    stable"
 ```
 
-+**`IBM Power (ppc64le)`**
++ **`IBM Power (ppc64le)`**
 
 ```
 $ sudo add-apt-repository \
@@ -116,7 +116,7 @@ $ sudo add-apt-repository \
    stable"
 ```
 
-+ **`IBM Z (s390x)`**
+**`IBM Z (s390x)`**
 
 ```
 $ sudo add-apt-repository \
