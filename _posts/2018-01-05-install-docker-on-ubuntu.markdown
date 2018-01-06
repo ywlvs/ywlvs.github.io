@@ -68,7 +68,7 @@ $ sudo apt-get install \
     software-properties-common
 ```
 
-+ 添加 Docker 的官方 `GPG key`
+3.添加 Docker 的官方 `GPG key`
 
 ```
 $ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
@@ -86,7 +86,7 @@ sub   4096R/F273FCD8 2017-02-22
 ```
 
 
-4. 使用下面的命令来建立稳定版的仓库（`stable repository`)。如果想创建一个 `edge` 或者 `test` 版本的 `repository`，可以在下面命令中 `stable` 后面加上你想要的版本，也可以两个都加上。不过，在任何时候，一个稳定版本的仓库都是必备的。
+4.使用下面的命令来建立稳定版的仓库（`stable repository`)。如果想创建一个 `edge` 或者 `test` 版本的 `repository`，可以在下面命令中 `stable` 后面加上你想要的版本，也可以两个都加上。不过，在任何时候，一个稳定版本的仓库都是必备的。
 
 >下面命令中，`lsb_release -cs` 子命令会返回你正在使用的 `Ubuntu` 发行版本的名字，比如 `xenial`。对于某些发行版本，比如 `Linux Mint`，你可能需要使用它上一个 Ubuntu 的发型版本（parent Ubuntu distribution）来代替 `$(lsb_release -cs)` 命令，比如你使用的是 `Linux Mint Rafaela`，你可以将该子命令用 `trusty` 进行替换。
 
@@ -130,13 +130,13 @@ $ sudo add-apt-repository \
 
 ##### INSTALL DOCKER CE
 
-1. 更新 apt package 的索引
+1.更新 apt package 的索引
 
 ```
 $ sudo apt-get update
 ```
 
-2. 安装最新版本的 Docker CE，或者跳到下一步，安装自己想要的某个版本。
+2.安装最新版本的 Docker CE，或者跳到下一步，安装自己想要的某个版本。
 
 ```
 $ sudo apt-get install docker-ce
@@ -144,7 +144,7 @@ $ sudo apt-get install docker-ce
 
 >如果设置了多个仓库（Docker repositories），使用 `apt-get install` 或者 `apt-get update` 命令进行 Docker 的安装或者升级时，如果没有指定版本，会默认安装最新的版本，这可能并不适合你想安装稳定版的初衷（may not be appropriate for your stability needs）。
 
-3. 在生产环境下安装 Docker 时，应该指定 Docker CE 的版本，而不是总是使用默认的最新版。使用 `apt-cache madison docker-ce` 命令可以查看当前有哪些可用的版本。
+3.在生产环境下安装 Docker 时，应该指定 Docker CE 的版本，而不是总是使用默认的最新版。使用 `apt-cache madison docker-ce` 命令可以查看当前有哪些可用的版本。
 
 ```
 $ apt-cache madison docker-ce
@@ -162,7 +162,7 @@ $ sudo apt-get install docker-ce=<VERSION>
 
 Docker 的守护进程（daemon）会自动启动运行。
 
-4. 通过运行 `hello world` 镜像来检查 Docker CE 是否正确安装。
+4.通过运行 `hello world` 镜像来检查 Docker CE 是否正确安装。
 
 ```
 $ sudo docker run hello-world
