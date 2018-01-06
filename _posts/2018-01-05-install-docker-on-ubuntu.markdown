@@ -90,7 +90,7 @@ sub   4096R/F273FCD8 2017-02-22
 
 >下面命令中，`lsb_release -cs` 子命令会返回你正在使用的 `Ubuntu` 发行版本的名字，比如 `xenial`。对于某些发行版本，比如 `Linux Mint`，你可能需要使用它上一个 Ubuntu 的发型版本（parent Ubuntu distribution）来代替 `$(lsb_release -cs)` 命令，比如你使用的是 `Linux Mint Rafaela`，你可以将该子命令用 `trusty` 进行替换。
 
-+ x86_64 / amd64
++**`x86_64 / amd64`**
 
 ```
 $ sudo add-apt-repository \
@@ -99,7 +99,7 @@ $ sudo add-apt-repository \
    stable"
 ```
 
-+ armhf
++**`armhf`**
 
 ```
 $ sudo add-apt-repository \
@@ -108,7 +108,7 @@ $ sudo add-apt-repository \
    stable"
 ```
 
-+ IBM Power (ppc64le)
++**`IBM Power (ppc64le)`**
 
 ```
 $ sudo add-apt-repository \
