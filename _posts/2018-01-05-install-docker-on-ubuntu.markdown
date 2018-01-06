@@ -68,7 +68,7 @@ $ sudo apt-get install \
     software-properties-common
 ```
 
-3. 添加 Docker 的官方 `GPG key`
++ 添加 Docker 的官方 `GPG key`
 
 ```
 $ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
