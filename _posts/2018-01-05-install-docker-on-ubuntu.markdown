@@ -4,7 +4,7 @@ title:      "在 Ubuntu 中安装 Docker CE"
 subtitle:   "Install Docker on Ubuntu 16.04"
 date:       2018-01-05 21:30:00
 author:     "ywlvs"
-header-img: "img/post-bg-web-infomation-security.jpg"
+header-img: "img/post-bg-docker-logo-whale.png"
 catalog: true
 tags:
     - Linux，Docker
