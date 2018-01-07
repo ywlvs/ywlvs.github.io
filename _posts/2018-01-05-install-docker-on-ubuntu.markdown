@@ -7,7 +7,8 @@ author:     "ywlvs"
 header-img: "img/post-bg-docker-logo-whale.png"
 catalog: true
 tags:
-    - Linux，Docker
+    - Linux
+    - Docker
 ---
 
 ### Prerequisites
