@@ -12,7 +12,7 @@ tags:
     - Decorator Pattern
 ---
 
->先贴一段代码，代码源自于《Laravel 框架关键技术解析》。
+先贴一段代码，代码源自于《Laravel 框架关键技术解析》。
 
 ```php
 <?php
