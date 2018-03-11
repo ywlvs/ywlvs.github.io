@@ -76,3 +76,152 @@ Linux 是多用户的操作系统，我们可以在系统中根据需要添加�
 
 /etc/gshadow：用户组（group）的影子文件
 
+
+### 相关命令
+
+创建用户的命令有：adduser 和 useradd。
+
++ adduser：会自动为创建的用户指定主目录、系统 shell 版本，会在创建时输入用户密码。
+
++ useradd：需要使用参数选项指定上述基本设置，如果不使用任何参数，则创建的用户无密码、无主目录、没有指定 shell 版本。
+
+#### 使用 adduser
+
+```
+root@Simona:~# adduser george
+Adding user `george' ...
+Adding new group `george' (1000) ...
+Adding new user `george' (1000) with group `george' ...
+Creating home directory `/home/george' ...
+Copying files from `/etc/skel' ...
+Enter new UNIX password:
+Retype new UNIX password:
+passwd: password updated successfully
+Changing the user information for george
+Enter the new value, or press ENTER for the default
+    Full Name []:
+    Room Number []:
+    Work Phone []:
+    Home Phone []:
+    Other []:
+Is the information correct? [Y/n] y
+
+```
+
+默认情况下，adduser 在创建用户时会主动调用 /etc/adduser.conf；
+
+在创建用户主目录时，默认在 /home 下，而且创建为 /home/用户名。如果主目录已经存在，则不再创建，但是此主目录虽然作为新用户的主目录，而且默认登录时会进入这个目录下，但是这个目录并不是属于新用户，当使用 userdel 删除该用户时，并不会删除这个主目录，因为该目录在创建该用户之前就已经存在。
+
+查看 shell 版本
+
+```
+george@Simona:~$ echo $SHELL
+/bin/bash
+```
+
+常用参数选项为：
+
++ --home：指定创建主目录的路径，默认是在 /home 目录下创建同名的目录，这里可以指定；如果主目录同名目录存在，则不再创建，仅在登录时进入主目录。
+
++ --quiet：只打印警告和错误信息，忽略其他信息。
+
++ --debug：定位错误信息。
+
++ --conf：在创建用户时使用指定的 configuration 文件。
+
++ --force-badname：默认在创建用户时会进行 /etc/adduser.conf 中的正则表达式检查用户名是否合法，如果想使用弱检查，则使用这个选项，如果不想检查，可以将 /etc/adduser.conf 中相关选项屏蔽。如
+
+```
+# check user and group names also against this regular expression.
+#NAME_REGEX="^[a-z][-a-z0-9_]*\$"
+```
+
+#### 使用 useradd
+
+不使用任何参数选项创建用户
+
+```
+root@Simona:~# useradd paul
+```
+
+正确执行完上述语句后，不会有任何输出，需要手动为该用户设置密码
+
+```
+root@Simona:/home# passwd paul
+Enter new UNIX password:
+Retype new UNIX password:
+passwd: password updated successfully
+
+```
+
+使用 ssh 远程连接时，会发现没有为用户创建默认的主目录。
+
+```
+[c:\~]$ ssh paul@120.78.201.5
+
+Connecting to 120.78.201.5:22...
+Connection established.
+To escape to local shell, press 'Ctrl+Alt+]'.
+
+Welcome to Ubuntu 16.04.2 LTS (GNU/Linux 4.4.0-62-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+The programs included with the Ubuntu system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Ubuntu comes with ABSOLUTELY NO WARRANTY, to the extent permitted by
+applicable law.
+
+
+Welcome to Alibaba Cloud Elastic Compute Service !
+
+
+The programs included with the Ubuntu system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Ubuntu comes with ABSOLUTELY NO WARRANTY, to the extent permitted by
+applicable law.
+
+Could not chdir to home directory /home/paul: No such file or directory
+$
+```
+
+用户登录后的所在目录是根目录 /，虽然 $HOME 环境变量为 /home/paul
+
+```
+$ echo $HOME
+/home/paul
+```
+
+查看 shell 版本，发现是 /bin/sh，说明没有指定 shell 版本。
+
+```
+$ echo $SHELL
+/bin/sh
+```
+
+常用参数选项包括：
+
++ -d：指定用户的主目录
+
++ -m：如果存在不再创建，但是此目录并不属于新创建用户；如果主目录不存在，则强制创建；-m 和 -d 一同使用。
+
++ -s：指定用户登录时的 shell 版本。
+
++ -M：不创建主目录。
+
+
+### 删除用户的命令： userdel
+
++ 只删除用户
+
+```
+root@Simona:~# userdel paul
+```
+
++ 连同用户主目录一同删除。如果创建用户之前，主目录已经存在，即主目录不属于当前要删除的用户，则无法删除主目录。
