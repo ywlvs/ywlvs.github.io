@@ -226,6 +226,10 @@ root@Simona:~# userdel paul
 
 + 连同用户主目录一同删除。如果创建用户之前，主目录已经存在，即主目录不属于当前要删除的用户，则无法删除主目录。
 
+```
+root@Simona:~# userdel -r george
+```
+
 ---
 
 参考文献
