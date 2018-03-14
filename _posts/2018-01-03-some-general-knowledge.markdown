@@ -7,7 +7,8 @@ author:     "ywlvs"
 header-img: "img/post-bg-web-infomation-security.jpg"
 catalog: true
 tags:
-    - Linux，Web
+    - Linux
+    - Web
 ---
 
 >工作中，会遇到各种词汇，尤其是缩写，虽然有些东西经常听到，但可能还真的说不清楚是什么东西，因此专门把这些东西记下来，也许会用的到。
