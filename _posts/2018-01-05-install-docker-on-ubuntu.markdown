@@ -54,6 +54,7 @@ $ sudo apt-get remove docker docker-engine docker.io
 $ sudo apt-get update
 ```
 
+
 2. 安装一些包，从而允许 `apt` 命令通过 `HTTPS` 来访问仓库。
 
 ```
