@@ -4,7 +4,7 @@ title:      "开启 Ubuntu 下 crontab 的执行日志"
 subtitle:   "Activate Log of Crontab in Ububtu"
 date:       2018-03-14 10:04:00
 author:     "ywlvs"
-header-img: "img/post-bg-php-magic-methods.jpg"
+header-img: "img/post-bg-crontab.png"
 catalog: true
 tags:
     - crontab
