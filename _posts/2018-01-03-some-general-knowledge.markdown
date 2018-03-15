@@ -94,3 +94,14 @@ Cross-Site Scripting，是一种网站应用程序的安全漏洞攻击，是代
 ### **`CSRF`**
 
 Cross-Site Request Forgery，也被称为 one-click attack 或者 session riding，通常缩写为 CSRF 或者 XSRF，是一种挟制用户在当前已登录的 Web 应用程序上执行非本意的操作的攻击方法。
+
+### **`FastCGI`**
+
+CGI（Common Gateway Interface），翻译成中文为“通用网关接口”，是一种协议或者说是一种工具，一般运行在服务器端，保证该服务器能与其他机器上的程序进行“交流”。CGI 可以用任何一种语言编写，只要这种语言具有标准输入、输出和环境变量。
+
+FastCGI 像是一个常驻（long-live）型的 CGI，它可以一直执行，其主要行为是将CGI解释器进程保持在内存中并因此获得较高的性能。
+
+
+### **`PHP-FPM`**
+
+FastCGI Process Manager，是 PHP 的 FastCGI 进程管理器。php.net 对其描述为：FPM 用于替换 PHP FastCGI 的大部分功能，对于高负载网站是非常有用的。
