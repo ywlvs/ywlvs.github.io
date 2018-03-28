@@ -1,7 +1,7 @@
 ---
 layout:     post
-title:      "top,ps 与 htop 的应用于区别"
-subtitle:   "Command to Show Process and the Differences Between Them"
+title:      "top, ps 和 htop 的应用与区别"
+subtitle:   "Commands to Show Process and the Differences Between Them"
 date:       2018-03-28 12:00:00
 author:     "ywlvs"
 header-img: "img/post-bg-dark-world.jpg"
