@@ -28,6 +28,8 @@ tags:
 
 ### 细说三次握手[参考来源](https://www.zhihu.com/question/24853633/answer/254224088)
 
+![three-way-handshake](/img/in-post/tcp-three-step-handshake/handshaking-detail.jpg)
+
 TCP 协议中，请求由『客户端』主动发起，『服务端』被动连接，连接建立后，客户端和服务端都能够发送和接收数据。最开始，服务端和客户端都处于 CLOSED 状态。通信开始前，双方均需要创建各自的传输控制块（TCB），服务端完成 TCB 的创建之后进入 LISTEN 状态，做好接收客户端的连接请求。
 
 握手过程中传送的报文段中不包含数据，三次握手完毕后，客户端与服务段才正式开始传送数据。理想状态下，TCP 连接一旦建立，在通信双方中的任何一方主动关闭连接之前，TCP 连接都将被一直保持下去。
