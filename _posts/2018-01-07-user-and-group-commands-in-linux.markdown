@@ -230,6 +230,33 @@ root@Simona:~# userdel paul
 root@Simona:~# userdel -r george
 ```
 
+
+### 其他相关命令
+
++ whoami
+
+显示当前登录的用户
+
+```
+root@Simona:~# whoami
+root
+```
+
++ groups
+
+显示当前登录用户所属用户组
+
+```
+root@Simona:~# groups
+root
+```
+
+显示指定用户所属组及其组内成员
+
+```
+root@Simona:~# groups root
+root : root
+```
 ---
 
 参考文献
