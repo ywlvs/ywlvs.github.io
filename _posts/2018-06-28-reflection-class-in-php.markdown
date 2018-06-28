@@ -24,7 +24,6 @@ tags:
 定义一个简单的类
 
 ```php
-
 <?php
 
 class Goods
@@ -36,7 +35,7 @@ class Goods
         $this->price = $price;
     }
 
-    public function getPrice($price)
+    public function getPrice()
     {
         echo $this->price;
     }
@@ -61,7 +60,7 @@ array(2) {
   [0]=>
   object(ReflectionMethod)#2 (2) {
     ["name"]=>
-    string(8) "setPrice"
+    string(11) "__construct"
     ["class"]=>
     string(5) "Goods"
   }
@@ -97,16 +96,15 @@ ReflectionClass::newInstance    //从指定的参数创建一个新的类实例
 
 ```php
 
-$refClass->getName();               // Car
-$refClass->hasMethod('setPrice');   // true
+$refClass->getName();               // Goods
+$refClass->hasMethod('getPrice');   // true
 $refClass->hasProperty('price');    // true
 $refClass->isAbstract();            //false
 $refClass->isFinal();               //false
 $refClass->isInstantiable();        //true
 
 $newGoods = $refClass->newInstance();
-$newGoods->setPrice(10.0);
-$newGoods->getPrice();                    //输出 Going to Stop
+$newGoods->getPrice();                    //输出 10.0
 
 ```
 
@@ -116,11 +114,21 @@ $newGoods->getPrice();                    //输出 Going to Stop
 
 ```php
 
-$car = new Car();
-$method = $refClass->getMethod('setBrand');
-$method->invoke($car, 'BMW');
+<?php
 
-var_dump($car->brand);
+class Greet
+{
+    public function say($message)
+    {
+        echo $message;
+    }
+}
+
+$greeting = new Greet();
+$refClass = new ReflectionClass(Greet::class);
+
+$method = $refClass->getMethod('say');
+$method->invoke($greeting, 'Good Morning');     //输出 Good Morning
 
 ```
 
@@ -144,7 +152,46 @@ ReflectionMethod::setAccessible // 设置方法是否访问
 
 #### 私有方法和私有属性
 
-使用反射既可以访问私有属性，也可以执行私有方法。
+使用反射既可以访问私有属性，也可以执行私有方法。对于某些引用的外部 SDK，如果想使用某些类中的私有方法或者私有属性却无法使用，可以使用反射的方式实现。
+
+下面尝试一个简单示例。
+
+```php
+
+<?php
+
+class Secret
+{
+    private $secret;
+
+    public $key;
+
+    public function __construct($key)
+    {
+        $this->$key = $key;
+        $this->secret = md5($key);
+    }
+
+    private function showSecret()
+    {
+        return $this->secret;
+    }
+}
+
+$item = new Secret('nothing-is-impossible');
+$refClass = new ReflectionClass($item);
+$method = $refClass->getMethod('showSecret');
+$method->setAccessible(true);
+echo $method->invoke($item);    // 输出f6ded05a949bf62753b2f19d8d401769
+
+$property = $refClass->getProperty('secret');
+$property->setAccessible(true);
+echo $property->getValue($item); // 输出f6ded05a949bf62753b2f19d8d401769
+
+```
+
+上面的例子中，分别调用了类的私有方法和私有属性，注意，上面有使用 setAccessible 这个函数，如果不先调用该函数，是无法实现对私有属性以及私有方法的访问的。
+
 
 ---
 
