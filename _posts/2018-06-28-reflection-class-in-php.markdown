@@ -90,7 +90,10 @@ ReflectionClass::isAbstract     //检查类是否是抽象类（abstract）
 ReflectionClass::isFinal        //检查类是否声明为 final
 ReflectionClass::isInstantiable //检查类是否可实例化
 ReflectionClass::newInstance    //从指定的参数创建一个新的类实例
+
 ```
+
+用上面的类做一个简单的测试。
 
 ```php
 
