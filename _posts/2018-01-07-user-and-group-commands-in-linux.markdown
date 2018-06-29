@@ -257,6 +257,11 @@ root
 root@Simona:~# groups root
 root : root
 ```
+
++ gpasswd
+
+管理组的命令
+
 ---
 
 参考文献
