@@ -60,7 +60,6 @@ $ sudo apt-get update
 ```
 
 2.安装一些必要的包，从而可以使用 `apt` 命令通过 `HTTPS` 访问仓库。
->>>>>>> 891257f8dc29d538fe1faff643e9364b6a6a6704
 
 ```
 $ sudo apt-get install \
