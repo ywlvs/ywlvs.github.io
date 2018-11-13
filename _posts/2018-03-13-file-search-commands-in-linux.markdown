@@ -62,13 +62,17 @@ find [-H] [-L] [-P] [-D debugopts] [-Olevel] [starting-point...] [expression]
 
 + `-empty`：查找空的文件
 
++ `-regex`：使用正则表达式进行搜索
+
++ `-iregex`：利用正则匹配，与 `-regex` 的区别是，这个选线对大小写不敏感
+
 ### 操作符
 
-> 与编程语言相似，存在逻辑非、逻辑或以及逻辑并的操作符。例如逻辑或，当操作符左侧的表达式为真时，不会验证右侧表达时的真假。逻辑并的操作也和编程中逻辑操作类似。
+> 与编程语言相似，存在逻辑非、逻辑或以及逻辑与的操作符。例如逻辑或，当操作符左侧的表达式为真时，不会验证右侧表达时的真假。逻辑与的操作也和编程中逻辑操作类似。
 
 + `!`：逻辑非，作用于后面的条件表达式
 + `-not`：和 `!` 作用一致，但是不兼容 POSIX
-+ `-a`：逻辑并，操作符左右的表达式都要满足。该操作符时默认操作符，一般可不写
++ `-a`：逻辑并与，操作符左右的表达式都要满足。该操作符时默认操作符，一般可不写
 + `-and`：和 `-a` 作用一致，但是不兼容 POSIX
 + `-o`：逻辑或
 + `-or`：作用同 `-o`，不兼容 POSIX。
@@ -97,10 +101,10 @@ find [-H] [-L] [-P] [-D debugopts] [-Olevel] [starting-point...] [expression]
     find -size 100c
     ```
 
-+ 查找大小**大于** 100 字节的文件
++ 查找大小**大于** 100K 的文件
 
     ```
-    find -size +100c
+    find -size +100K
     ```
 
 + 查找大小**小于** 100 字节的文件
@@ -131,4 +135,34 @@ find [-H] [-L] [-P] [-D debugopts] [-Olevel] [starting-point...] [expression]
 
     ```
     find -maxdepth 1 -cmin -40
+    ```
+
++ 查找当前目录下 root 用户所拥有的文件
+
+    ```
+    find . -type f -user root -print
+    ```
+
++ 查找具有可执行权限的文件
+
+    ```
+    find . -type f -perm 644 -print
+    ```
+
++ 查找当前目录下的 txt 和 pdf 文件
+
+    ```
+    find . \( -name "*.txt" -o -name "*.pdf" \) -print
+    ```
+
++ 正则方式查找 txt 和 pdf 文件
+
+    ```
+    find . -regex ".*\(\.txt|\.pdf\)$"
+    ```
+
++ 查找非 txt 文件
+
+    ```
+    find . ! -name "*.txt" -print
     ```
