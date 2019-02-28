@@ -90,15 +90,19 @@ tags:
 
 ```
 root@Simona:~# cat -n list_1
-     1  goodgoodverygood
-     2  goodddgoodgood
-     3  123412341234
+
+    1  goodgoodverygood
+
+    2  goodddgoodgood
+
+    3  123412341234
 ```
 
 比如想找到连续出现两次的 good 字符串，该如何操作呢？使用 `\{n\}` 可以进行次数匹配，但是它表示该匹配符前面的单个字符重复出现 n 次，因此使用 `grep 'good\{2\}' list_1` 无法实现我们的目标。
 
 ```
 root@Simona:~# grep -n 'good\{2\}' list_1
+
 2:goodddgoodgood
 ```
 
@@ -107,7 +111,52 @@ root@Simona:~# grep -n 'good\{2\}' list_1
 上面对内容的匹配，都是针对单个字符的。如果要匹配某个单词重复若干次，这个时候使用分组就对了。
 
 
+```
+root@Simona:~# grep -n '\(good\)\{2\}' list_1
 
+1:goodgoodverygood
+
+2:goodddgoodgood
+```
+
+使用上面的匹配模式，匹配结果是 <span class="red">goodgood</span>verygood 以及 gooddd<span class="red">goodgood</span>。
+
+分组，就是将若干连续的字符视为一个整体作为匹配的对象。上面例子中，就是将 good 四个字符分成一组进行匹配的。
+
+`\(\)` 就是分组匹配符，`\(good\)` 就是将 good 作为一组去匹配。
+
+#### 啥是向后引用
+
+所谓向后引用，就是利用前面分组所匹配的对象，对后面的内容进行匹配。
+
+举个例子。查看一下文件 list_2 的内容
+
+```
+root@Simona:~# cat -n list_2
+
+    1  god & gun
+
+    2  god & god
+```
+
+使用下面的匹配规则
+
+```
+root@Simona:~# grep -n '.\{3\} & .\{3\}' list_2
+
+1:god & gun
+
+2:god & god
+```
+
+可以看到，该模式会将两行都匹配出来。如果我们只想匹配第 2 行呢，就是说，对于该文本的每一行，要求 & 符号前后的字符串一致。这个时候可以使用的向后匹配。
+
+
+```
+root@Simona:~# grep -n '\(.\{3\}\) & \1' list_2
+
+2:god & god
+```
 
 ### 在 shell 中通过 grep 工具使用正则
 
