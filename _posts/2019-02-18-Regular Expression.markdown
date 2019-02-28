@@ -267,9 +267,9 @@ root@Simona:~# cat -n list_4
 ```
 
 ```
-root@Simona:~# grep -E '(net|com)$' list_4
+root@Simona:~# grep -nE '(net|com)$' list_4
 
-www.baidu.com
+2:www.baidu.com
 
-www.coding.net
+3:www.coding.net
 ```
