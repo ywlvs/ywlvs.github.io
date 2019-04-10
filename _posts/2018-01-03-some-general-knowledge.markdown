@@ -105,3 +105,11 @@ FastCGI 像是一个常驻（long-live）型的 CGI，它可以一直执行，�
 ### **`PHP-FPM`**
 
 FastCGI Process Manager，是 PHP 的 FastCGI 进程管理器。php.net 对其描述为：FPM 用于替换 PHP FastCGI 的大部分功能，对于高负载网站是非常有用的。
+
+### **`DDL`**
+
+Data Definition Language - 数据库定义语言
+
+### **`DML`**
+
+Data Manipulation Language - 数据操作语言
