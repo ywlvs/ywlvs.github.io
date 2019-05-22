@@ -35,7 +35,7 @@ array_walk($names, $callback);
 <?php
 
 $greet = function ($message) {
-    echo 'Hello' . ' ' . $message; 
+    echo 'Hello' . ' ' . $message;
 };
 
 $greet('XiaoMing');     //Hello XiaoMing
@@ -45,7 +45,7 @@ $greet('World');        //Hello World
 ?>
 ```
 
-闭包函数可以从父作用域继承变量，任何此类变量都应该使用 use 语言结构传递进去。从 PHP7.1 期，$this、superglobals 和参数重名的变量不能传入进去。
+闭包函数可以从父作用域继承变量，任何此类变量都应该使用 use 语言结构传递进去。从 PHP7.1 起，$this、superglobals 和参数重名的变量不能传入进去。
 
 ```php
 <?php
