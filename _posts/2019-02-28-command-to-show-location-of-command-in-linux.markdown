@@ -11,6 +11,22 @@ tags:
     - linux
 ---
 
+
+## which
+
+```
+which php7.2
+
+which php7.2 mysql vim
+```
+
+## whereis
+
+```
+whereis php7.2
+```
+
+
 ## type
 
 type 用来显示给定命令的类型，并判断该命令是内部指令还是外部指令
@@ -29,7 +45,6 @@ type [选项] 参数
 
 + `-a` display all locations containing an executable named NAME; includes aliases, builtins, and functions, if and only if the `-p` option is not also used
 
-
 + `-P` force a PATH search for each NAME, even if it is an alias, builtin, or function, and returns the name of the disk file that would be executed
 ```
 
@@ -42,6 +57,7 @@ type [选项] 参数
 + file：文件，磁盘文件，外部命令。
 + unfound：没有找到。
 
+### 使用示例
 
 ```
 type php7.2
@@ -49,18 +65,4 @@ type php7.2
 type -p php7.2
 
 type -p php7.2 mysql vim
-```
-
-## which
-
-```
-which php7.2
-
-which php7.2 mysql vim
-```
-
-## whereis
-
-```
-whereis php7.2
 ```
