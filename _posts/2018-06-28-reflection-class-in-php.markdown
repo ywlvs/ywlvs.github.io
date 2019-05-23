@@ -39,7 +39,7 @@ class Goods
     {
         echo $this->price;
     }
-} 
+}
 
 ```
 
@@ -103,7 +103,7 @@ $refClass->isAbstract();            //false
 $refClass->isFinal();               //false
 $refClass->isInstantiable();        //true
 
-$newGoods = $refClass->newInstance();
+$newGoods = $refClass->newInstance(10.0);
 $newGoods->getPrice();                    //输出 10.0
 
 ```
