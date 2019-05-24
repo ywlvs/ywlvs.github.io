@@ -20,9 +20,6 @@ tags:
 下面有个简单的例子
 
 ```php
-
-<?php
-
 class A
 {
     public static function myName()
@@ -45,15 +42,11 @@ class B extends A
 }
 
 B::printName();
-
 ```
 
 调用 `B::printName();` 打印的结果是 'A'。接下来，让我们修改一下 class A 中的 printName 方法，将 self 修改为 static。
 
 ```php
-
-<?php
-
 class A
 {
     public static function myName()
@@ -76,7 +69,30 @@ class B extends A
 }
 
 B::printName();
-
 ```
 
 将 self 修改成 static 之后，执行打印的结果是 ’B'。这是因为，使用 self:: 关键字，或者 __CLASS__ 对当前类的引用，都是取决于定义当前方法 所在的类。而使用 static 关键字，则解除了 self 的这个限制。
+
+
+```php
+class A
+{
+    public static function myName()
+    {
+        return 'A';
+    }
+
+    public static function printName()
+    {
+        echo static::myName();
+    }
+}
+
+class B extends A
+{
+}
+
+B::printName();
+```
+
+再次修改之前的代码，`B::printName()` 操作的输出结果为 ’A'，这是因为 `B` 类中没有 `myName` 方法也没有 `printName` 方法。
