@@ -1,0 +1,95 @@
+---
+layout:     post
+title:      "ES6 中变量的解构赋值"
+subtitle:   "Destructuring Assignment in ES6"
+date:       2019-06-08 17:45:00
+author:     "ywlvs"
+header-img: "img/post-bg-php-magic-methods.jpg"
+catalog: true
+tags:
+    - ES6
+---
+
+ES6 中，允许按照一定模式，从数组和对象中提取值，对变量进行赋值，这种操作就是结构。
+
+在此之前，为变量赋值只能直接指定值，如：
+
+```?javascript
+let a = 1;
+let b= 'Jim';
+```
+
+使用解构的方式，可以像下面这样赋值：
+
+let [a, b] = [1, 'Jim'];
+
+本质上，解构属于模式匹配，只要等号两边的模式相同，左边的变量就能够被赋予对应的值。
+
+### 数组的解构
+
+#### 例子
+
+```?javascript
+let [foo, [bar], baz] = [1, [2], 3];
+
+foo // 1
+bar // 2
+baz // 3
+
+let [a, , c] = [1, 2, 3];
+a // 1
+c // 3
+
+let [, , m] = [4, 3, 2];
+m // 2
+
+let [head, ...tail] = [1, 2, 3, 4];
+head // 1
+tail // [2, 3, 4]
+
+let [x, y, ...z] = ['foo'];
+x // foo
+y // undefined
+z // []
+```
+
+#### 默认值
+
+解构时可以为变量指定默认值，一个变量通过解构没有被赋值时，便等于默认值。ES6 中使用严格相等运算符（===）来判断一个变量是否有值，即只有一个数组成员严格等于 undefined 时，才会被赋予默认值。
+
+```?javascript
+let [a, b = 'no', c = 'hello'] = ['yes', null];
+a // yes
+b // null
+c // hello
+```
+
+上面的例子中，使用模式匹配，b 对应的是 null，并不严格与 undefined 相等，因此不会被赋予默认值。而等号右边的数组中，没有与 c 相对应的值，那么它与 undefined 严格相等，因此使用默认值进行赋值。
+
+### 对象的解构
+
+#### 例子
+
+```javascript
+let {foo, bar} = {bar: 'hello', foo: 'world'};
+foo // world
+bar // hello
+
+let {baz} = {foo: 'name', baz: 'gender'};
+baz // gender
+
+let {name, gender} = {name: 'Jim', age: 13};
+name // Jim
+gender // undefined
+```
+
+与数组不同的是，对象的解构，不要求等号两边大括号内变量的顺序一一对应，是按照 key 进行匹配的。
+
+#### 默认值
+
+一样可以使用默认值，未完待续。
+
+
+### 参考文献
+
+[变量的解构赋值](http://es6.ruanyifeng.com/#docs/destructuring)
