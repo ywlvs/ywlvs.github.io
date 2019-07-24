@@ -113,3 +113,7 @@ Data Definition Language - 数据库定义语言
 ### **`DML`**
 
 Data Manipulation Language - 数据操作语言
+
+### **`Unicode 字符集`**
+
+常见的 Unicode 字符集编码方案有三种，utf8、utf16 和 utf32，其中，utf8 编码一个字符需要 1~4 个字节，而 utf16 使用 2 或 4 个字节来编码一个字符，utf32 则使用 4 个字节编码一个字符。由此可见，utf8 这种方案，可以节省一定的存储空间。
