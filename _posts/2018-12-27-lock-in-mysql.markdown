@@ -92,6 +92,7 @@ insert into room_area (`number`, 'area') values ('C1211', 35), ('C1212', 25), ('
 ```
 
 |number| area|
+|:--:|:--:|
 | C1211  |   35 |
 | C1212  |   25 |
 | C1213  |   35 |
