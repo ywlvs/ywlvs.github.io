@@ -134,6 +134,8 @@ insert into room_area (`number`, 'area') values ('C1211', 35), ('C1212', 25), ('
  Lock wait timeout exceeded; try restarting transaction
 ```
 
+> 突然想到当年使用队列时，经常出现类似的错误，当时还是自己太菜，连事务都不懂得使用。
+
 ### 场景二
 
 给 room_area 在 number 字段上创建索引。
