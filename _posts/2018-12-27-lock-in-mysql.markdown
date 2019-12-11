@@ -122,13 +122,17 @@ insert into room_area (`number`, 'area') values ('C1211', 35), ('C1212', 25), ('
 
 ### 场景一
 
-|session A|session B|
-|:--:|:--:|
-|start transaction with consistent snapshot;|start transaction with consistent snapshot;|
-|update room_area set area = 24 where number = 'C1309';||
-||update room_area set area = 24 where number = 'C1308';|
+|t|session A|session B|
+|:--:|:--:|:--:|
+|t1|start transaction with consistent snapshot;|start transaction with consistent snapshot;|
+|t2|update room_area set area = 24 where number = 'C1309';||
+|t3||update room_area set area = 24 where number = 'C1308';|
 
-此场景中，session A 中的更新语句正常执行，session B 中语句被 block，
+此场景中，t2 时刻（session A）中的更新语句正常执行，t3 时刻（session B）中语句被阻塞，超时之后会有如下提示：
+
+```
+ Lock wait timeout exceeded; try restarting transaction
+```
 
 ### 场景二
 
@@ -143,3 +147,13 @@ alter table room_area add index idx_number(`number`);
 |t1|start transaction with consistent snapshot;|start transaction with consistent snapshot;|
 |t2|update room_area set area = 24 where number = 'C1309';||
 |t3||update room_area set area = 25 where number = 'C1308';|
+|t4|update room_area set area = 26 where number = 'C1308';|#blocked|
+|t5||update room_area set area = 27 where number = 'C1309';#blocked|
+
+t2 时刻（session A）与 t3 时刻（session B）的语句均顺利执行。t4 时刻（session A）的语句被 blocked 住，处于等待状态，t5 时刻（session B）的语句也被 blocked 住，不会执行，但是此时触发了死锁检测，由于是 session B 在 t5 时刻的这条语句是后发起的，所以该语句的执行被放弃。之后 t4 时刻（session A）的语句执行完成。
+
+t5 时刻语句被放弃执行时，抛出的异常提示如下：
+
+```
+Deadlock found when trying to get lock; try restarting transaction
+```
