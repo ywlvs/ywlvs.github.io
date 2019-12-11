@@ -75,5 +75,52 @@ ALTER TABLE tbl_name WAIT n add column ...
 
 ## 几个锁的例子
 
-|biaoti|标题|
-|内容|内容|
++ MySQL Version:5.7.27
+
++ transaction_isolation:REPEATABLE-READ
+
+先创建一个表，并插入若干条测试数据。
+
+```sql
+CREATE TABLE `room_area` (
+  `number` varchar(255) DEFAULT NULL,
+  `area` float DEFAULT NULL,
+  KEY `idx_number` (`number`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8
+
+insert into room_area (`number`, 'area') values ('C1211', 35), ('C1212', 25), ('C1213', 35), ('C1214', 42), ('C1215', 25), ('C1216', 20), ('C1217', 20), ('C1218', 18), ('C1219', 18), ('C1220', 18), ('C1221', 18), ('C1222', 18), ('C1301', 28), ('C1302', 55), ('C1303', 25), ('C1304', 25), ('C1305', 18), ('C1306', 18), ('C1307', 21), ('C1308', 22), ('C1309', 23);
+```
+
+|number| area|
+| C1211  |   35 |
+| C1212  |   25 |
+| C1213  |   35 |
+| C1214  |   42 |
+| C1215  |   25 |
+| C1216  |   20 |
+| C1217  |   20 |
+| C1218  |   18 |
+| C1219  |   18 |
+| C1220  |   18 |
+| C1221  |   18 |
+| C1222  |   18 |
+| C1301  |   28 |
+| C1302  |   55 |
+| C1303  |   25 |
+| C1304  |   25 |
+| C1305  |   18 |
+| C1306  |   18 |
+| C1307  |   21 |
+| C1308  |   22 |
+| C1309  |   23 |
+
+
+需要注意的是，创建该表的时候，**未定义主键**字段，同时**未创建任何索引**。
+
+### 场景一
+
+|session A|session B|
+|:--:|:--:|
+|start transaction with consistent snapshot;|start transaction with consistent snapshot;|
+|update room_area set area = 24 where number = 'C1309';||
+||update room_area set area = 24 where number = 'C1308';|
