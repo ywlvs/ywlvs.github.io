@@ -4,7 +4,7 @@ title:      "MySQL 中的锁"
 subtitle:   "Lock in MySQL"
 date:       2018-12-28 16:00:00
 author:     "ywlvs"
-header-img: "img/post-bg-php-magic-methods.jpg"
+header-img: "img/post-bg-mysql-lock.jpg"
 catalog: true
 tags:
     - MySQL
